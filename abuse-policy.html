@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abuse & Revocation Policy - DevSpace Documentation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="DevSpace" class="logo-img">
+    </a>
+    <nav class="header-nav">
+      <a href="https://devspace.qzz.io" target="_blank">Main Site</a>
+      <a href="https://github.com/devspace-qzz-io/register" target="_blank">GitHub</a>
+    </nav>
+    <button class="mobile-menu-btn" onclick="toggleSidebar()">☰</button>
+  </header>
+
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <nav class="sidebar-nav">
+        <div class="sidebar-section">
+          <div class="sidebar-title">Overview</div>
+          <a href="index.html" class="sidebar-link">Documentation Home</a>
+          <a href="getting-started.html" class="sidebar-link">Getting Started</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-title">Guides</div>
+          <a href="requesting-domain.html" class="sidebar-link">Requesting a Subdomain</a>
+          <a href="hosting-rules.html" class="sidebar-link">Hosting Requirements</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-title">Policies</div>
+          <a href="abuse-policy.html" class="sidebar-link active">Abuse & Revocation</a>
+          <a href="faq.html" class="sidebar-link">FAQ</a>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+      <div class="page-header">
+        <h1>Abuse & Revocation Policy</h1>
+        <p>Understanding what constitutes abuse and our domain revocation process.</p>
+      </div>
+
+      <div class="content-section">
+        <p class="lead">
+          DevSpace maintains strict standards for all subdomains. This policy outlines what constitutes 
+          abuse, how to report violations, and the process for domain revocation.
+        </p>
+      </div>
+
+      <h2>What Constitutes Abuse</h2>
+      <p>The following activities are considered abuse of the DevSpace service:</p>
+
+      <h3>Prohibited Content</h3>
+      <ul>
+        <li>Illegal content or activities under applicable laws</li>
+        <li>Malware, viruses, or malicious software distribution</li>
+        <li>Phishing attempts or credential harvesting</li>
+        <li>Scams, fraud, or deceptive practices</li>
+        <li>Content that infringes on intellectual property rights</li>
+        <li>Harassment, hate speech, or discriminatory content</li>
+        <li>Adult content or pornography</li>
+        <li>Violent or extremist content</li>
+      </ul>
+
+      <h3>Prohibited Technical Uses</h3>
+      <ul>
+        <li>Attempting to bypass CNAME-only restrictions</li>
+        <li>Using subdomains for email services (MX records)</li>
+        <li>Setting up reverse proxies to unapproved services</li>
+        <li>URL shorteners or redirect chains</li>
+        <li>Cryptocurrency mining or similar resource abuse</li>
+        <li>Botnets or command-and-control infrastructure</li>
+        <li>DDoS attack coordination or amplification</li>
+      </ul>
+
+      <h3>Service Abuse</h3>
+      <ul>
+        <li>Registering multiple subdomains for the same project without justification</li>
+        <li>Squatting on subdomain names for resale or speculation</li>
+        <li>Providing false information during registration</li>
+        <li>Using subdomains primarily for SEO manipulation</li>
+        <li>Commercial use that violates our developer-focused policy</li>
+      </ul>
+
+      <h2>Reporting Abuse</h2>
+      <p>
+        If you discover a DevSpace subdomain being used for abusive purposes, please report it 
+        immediately. All reports are investigated promptly and confidentially.
+      </p>
+
+      <div class="info-box">
+        <div class="info-box-title">How to Report</div>
+        <p>
+          Send abuse reports to the contact information provided on the main DevSpace website. 
+          Include the following details:
+        </p>
+        <ul>
+          <li>The subdomain in question</li>
+          <li>Nature of the abuse</li>
+          <li>Any relevant evidence or documentation</li>
+          <li>Your contact information (optional, for follow-up)</li>
+        </ul>
+      </div>
+
+      <h2>Revocation Policy</h2>
+
+      <h3>Grounds for Revocation</h3>
+      <p>A DevSpace subdomain may be revoked for any of the following reasons:</p>
+      <ul>
+        <li>Violation of the abuse policies outlined above</li>
+        <li>Change in content that no longer meets eligibility requirements</li>
+        <li>Prolonged inactivity (site unreachable for extended periods)</li>
+        <li>Failure to respond to administrative inquiries</li>
+        <li>Technical violations of hosting requirements</li>
+        <li>At the discretion of DevSpace administrators</li>
+      </ul>
+
+      <h3>Revocation Process</h3>
+      <ol>
+        <li>
+          <strong>Detection:</strong> Abuse is detected through reports, automated monitoring, or manual review.
+        </li>
+        <li>
+          <strong>Investigation:</strong> The subdomain and its content are reviewed by administrators.
+        </li>
+        <li>
+          <strong>Notification:</strong> When possible, the registrant is notified of the violation and given 
+          an opportunity to correct the issue.
+        </li>
+        <li>
+          <strong>Action:</strong> If the violation is not resolved or is severe, the subdomain is revoked 
+          and the DNS record is removed.
+        </li>
+        <li>
+          <strong>Appeal:</strong> Registrants may appeal revocation decisions through the contact channels 
+          provided on the main website.
+        </li>
+      </ol>
+
+      <div class="info-box warning">
+        <div class="info-box-title">Immediate Action</div>
+        <p>
+          In cases of severe abuse (malware distribution, phishing, illegal content), subdomains may be 
+          revoked immediately without prior notice.
+        </p>
+      </div>
+
+      <h2>No Guarantee of Permanence</h2>
+      <p>
+        DevSpace subdomains are provided as a free service and come with no guarantee of permanent 
+        availability. Subdomains may be revoked at any time for reasons including but not limited to:
+      </p>
+      <ul>
+        <li>Service discontinuation or restructuring</li>
+        <li>Changes to eligibility criteria</li>
+        <li>Administrative decisions</li>
+        <li>Technical requirements</li>
+        <li>Force majeure events</li>
+      </ul>
+
+      <div class="info-box danger">
+        <div class="info-box-title">Important Disclaimer</div>
+        <p>
+          DevSpace provides no warranty or guarantee of service continuity. Registrants should maintain 
+          their own backup domains and not rely exclusively on DevSpace subdomains for critical services 
+          or communications.
+        </p>
+      </div>
+
+      <h2>Reinstatement</h2>
+      <p>
+        In some cases, revoked subdomains may be reinstated:
+      </p>
+      <ul>
+        <li>If the violation was corrected within the given timeframe</li>
+        <li>If the revocation was made in error</li>
+        <li>Upon successful appeal with reasonable justification</li>
+      </ul>
+      <p>
+        Reinstatement is not guaranteed and is evaluated on a case-by-case basis.
+      </p>
+
+      <footer class="footer">
+        <span class="footer-text">Maintained by <a href="https://anveshraman.qzz.io" style="color: gray;">Anvesh Raman</a> &copy; 2026 DevSpace</span>
+        <div class="footer-right">
+          <a href="https://devspace.qzz.io" target="_blank">Main Site</a>
+          <a href="https://github.com/devspace-qzz-io/register" target="_blank">GitHub</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+    }
+  </script>
+</body>
+</html>

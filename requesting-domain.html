@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Requesting a Subdomain - DevSpace Documentation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="DevSpace" class="logo-img">
+    </a>
+    <nav class="header-nav">
+      <a href="https://devspace.qzz.io" target="_blank">Main Site</a>
+      <a href="https://github.com/devspace-qzz-io/register" target="_blank">GitHub</a>
+    </nav>
+    <button class="mobile-menu-btn" onclick="toggleSidebar()">☰</button>
+  </header>
+
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <nav class="sidebar-nav">
+        <div class="sidebar-section">
+          <div class="sidebar-title">Overview</div>
+          <a href="index.html" class="sidebar-link">Documentation Home</a>
+          <a href="getting-started.html" class="sidebar-link">Getting Started</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-title">Guides</div>
+          <a href="requesting-domain.html" class="sidebar-link active">Requesting a Subdomain</a>
+          <a href="hosting-rules.html" class="sidebar-link">Hosting Requirements</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-title">Policies</div>
+          <a href="abuse-policy.html" class="sidebar-link">Abuse & Revocation</a>
+          <a href="faq.html" class="sidebar-link">FAQ</a>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+      <div class="page-header">
+        <h1>Requesting a Subdomain</h1>
+        <p>Step-by-step guide to submitting your DevSpace subdomain request.</p>
+      </div>
+
+      <div class="content-section">
+        <p class="lead">
+          Requesting a DevSpace subdomain is done through GitHub. You'll fork our registry repository, 
+          add your subdomain configuration, and submit a pull request for review.
+        </p>
+      </div>
+
+      <h2>The Process</h2>
+
+      <ol class="steps">
+        <li class="step">
+          <div class="step-title">Fork the registry repository</div>
+          <p>
+            Visit the <a href="https://github.com/devspace-qzz-io/register" target="_blank">devspace-qzz-io/register</a> 
+            repository on GitHub and click the "Fork" button to create your own copy.
+          </p>
+        </li>
+        <li class="step">
+          <div class="step-title">Add your domain entry JSON file</div>
+          <p>
+            In your forked repository, create a new JSON file in the <code>domains/</code> directory. 
+            The filename should match your requested subdomain (e.g., <code>yourname.json</code>).
+          </p>
+        </li>
+        <li class="step">
+          <div class="step-title">Submit a pull request</div>
+          <p>
+            Commit your changes and open a pull request to the original repository. Include a brief 
+            description of your project in the PR description.
+          </p>
+        </li>
+        <li class="step">
+          <div class="step-title">Wait for manual review</div>
+          <p>
+            Our team will review your request manually. This typically takes 1-3 business days. 
+            You may be asked for additional information or changes.
+          </p>
+        </li>
+      </ol>
+
+      <h2>JSON Configuration Format</h2>
+      <p>
+        Your domain entry JSON file must follow this exact format:
+      </p>
+
+      <pre><code>{
+  <span class="json-key">"domain"</span>: <span class="json-string">"yourname"</span>,
+  <span class="json-key">"owner"</span>: {
+    <span class="json-key">"github"</span>: <span class="json-string">"yourusername"</span>,
+    <span class="json-key">"email"</span>: <span class="json-string">"your@email.com"</span>
+  },
+  <span class="json-key">"record"</span>: {
+    <span class="json-key">"type"</span>: <span class="json-string">"CNAME"</span>,
+    <span class="json-key">"value"</span>: <span class="json-string">"yourusername.github.io"</span>
+  }
+}</code></pre>
+
+      <h3>Field Descriptions</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Field</th>
+            <th>Required</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>domain</code></td>
+            <td>Yes</td>
+            <td>Your requested subdomain (e.g., "alex" for alex.devspace.qzz.io)</td>
+          </tr>
+          <tr>
+            <td><code>owner.github</code></td>
+            <td>Yes</td>
+            <td>Your GitHub username</td>
+          </tr>
+          <tr>
+            <td><code>owner.email</code></td>
+            <td>Yes</td>
+            <td>Your contact email address</td>
+          </tr>
+          <tr>
+            <td><code>record.type</code></td>
+            <td>Yes</td>
+            <td>Must be "CNAME"</td>
+          </tr>
+          <tr>
+            <td><code>record.value</code></td>
+            <td>Yes</td>
+            <td>Your hosting provider's CNAME target</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Example Configurations</h2>
+
+      <h3>GitHub Pages</h3>
+      <pre><code>{
+  <span class="json-key">"domain"</span>: <span class="json-string">"johndoe"</span>,
+  <span class="json-key">"owner"</span>: {
+    <span class="json-key">"github"</span>: <span class="json-string">"johndoe"</span>,
+    <span class="json-key">"email"</span>: <span class="json-string">"john@example.com"</span>
+  },
+  <span class="json-key">"record"</span>: {
+    <span class="json-key">"type"</span>: <span class="json-string">"CNAME"</span>,
+    <span class="json-key">"value"</span>: <span class="json-string">"johndoe.github.io"</span>
+  }
+}</code></pre>
+
+      <h3>Vercel</h3>
+      <pre><code>{
+  <span class="json-key">"domain"</span>: <span class="json-string">"myproject"</span>,
+  <span class="json-key">"owner"</span>: {
+    <span class="json-key">"github"</span>: <span class="json-string">"developer"</span>,
+    <span class="json-key">"email"</span>: <span class="json-string">"dev@example.com"</span>
+  },
+  <span class="json-key">"record"</span>: {
+    <span class="json-key">"type"</span>: <span class="json-string">"CNAME"</span>,
+    <span class="json-key">"value"</span>: <span class="json-string">"cname.vercel-dns.com"</span>
+  }
+}</code></pre>
+
+      <h3>Netlify</h3>
+      <pre><code>{
+  <span class="json-key">"domain"</span>: <span class="json-string">"portfolio"</span>,
+  <span class="json-key">"owner"</span>: {
+    <span class="json-key">"github"</span>: <span class="json-string">"designer"</span>,
+    <span class="json-key">"email"</span>: <span class="json-string">"hello@example.com"</span>
+  },
+  <span class="json-key">"record"</span>: {
+    <span class="json-key">"type"</span>: <span class="json-string">"CNAME"</span>,
+    <span class="json-key">"value"</span>: <span class="json-string">"my-site.netlify.app"</span>
+  }
+}</code></pre>
+
+      <div class="info-box">
+        <div class="info-box-title">Important</div>
+        <p>
+          Make sure your custom domain is already configured on your hosting platform before submitting 
+          your request. The subdomain will not work until both sides are properly configured.
+        </p>
+      </div>
+
+      <h2>After Submission</h2>
+      <p>
+        Once your pull request is submitted:
+      </p>
+      <ul>
+        <li>Automated checks will validate your JSON syntax</li>
+        <li>A maintainer will review your request manually</li>
+        <li>You may receive feedback or requests for changes</li>
+        <li>Once approved, your subdomain will be active within 24 hours</li>
+      </ul>
+
+      <div class="info-box warning">
+        <div class="info-box-title">Domain Availability</div>
+        <p>
+          Subdomains are allocated on a first-come, first-served basis. If your requested name is 
+          already taken, you will need to choose an alternative.
+        </p>
+      </div>
+
+      <footer class="footer">
+        <span class="footer-text">Maintained by <a href="https://anveshraman.qzz.io" style="color: gray;">Anvesh Raman</a> &copy; 2026 DevSpace</span>
+        <div class="footer-right">
+          <a href="https://devspace.qzz.io" target="_blank">Main Site</a>
+          <a href="https://github.com/devspace-qzz-io/register" target="_blank">GitHub</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+    }
+  </script>
+</body>
+</html>

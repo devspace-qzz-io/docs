@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hosting Requirements - DevSpace Documentation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="DevSpace" class="logo-img">
+    </a>
+    <nav class="header-nav">
+      <a href="https://devspace.qzz.io" target="_blank">Main Site</a>
+      <a href="https://github.com/devspace-qzz-io/register" target="_blank">GitHub</a>
+    </nav>
+    <button class="mobile-menu-btn" onclick="toggleSidebar()">☰</button>
+  </header>
+
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <nav class="sidebar-nav">
+        <div class="sidebar-section">
+          <div class="sidebar-title">Overview</div>
+          <a href="index.html" class="sidebar-link">Documentation Home</a>
+          <a href="getting-started.html" class="sidebar-link">Getting Started</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-title">Guides</div>
+          <a href="requesting-domain.html" class="sidebar-link">Requesting a Subdomain</a>
+          <a href="hosting-rules.html" class="sidebar-link active">Hosting Requirements</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-title">Policies</div>
+          <a href="abuse-policy.html" class="sidebar-link">Abuse & Revocation</a>
+          <a href="faq.html" class="sidebar-link">FAQ</a>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+      <div class="page-header">
+        <h1>Hosting Requirements</h1>
+        <p>Approved hosting providers and CNAME configuration guidelines.</p>
+      </div>
+
+      <div class="content-section">
+        <p class="lead">
+          DevSpace only supports CNAME records pointing to approved hosting providers. 
+          This ensures reliability, security, and consistent performance for all subdomains.
+        </p>
+      </div>
+
+      <h2>Approved CNAME Targets</h2>
+      <p>
+        The following hosting providers and their CNAME patterns are approved for DevSpace subdomains:
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Provider</th>
+            <th>CNAME Pattern</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>GitHub Pages</td>
+            <td><code>*.github.io</code></td>
+            <td><code>username.github.io</code></td>
+          </tr>
+          <tr>
+            <td>Vercel</td>
+            <td><code>*.vercel.app</code></td>
+            <td><code>project.vercel.app</code></td>
+          </tr>
+          <tr>
+            <td>Netlify</td>
+            <td><code>*.netlify.app</code></td>
+            <td><code>site.netlify.app</code></td>
+          </tr>
+          <tr>
+            <td>Cloudflare Pages</td>
+            <td><code>*.pages.dev</code></td>
+            <td><code>project.pages.dev</code></td>
+          </tr>
+          <tr>
+            <td>Firebase Hosting</td>
+            <td><code>*.web.app</code></td>
+            <td><code>project.web.app</code></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="info-box">
+        <div class="info-box-title">Exact Match Required</div>
+        <p>
+          Only exact matches to the approved patterns are accepted. Custom domains, 
+          wildcard records, or CNAMEs pointing to other services will be rejected.
+        </p>
+      </div>
+
+      <h2>Provider-Specific Setup</h2>
+
+      <h3>GitHub Pages</h3>
+      <p>
+        To use GitHub Pages with your DevSpace subdomain:
+      </p>
+      <ol>
+        <li>Go to your repository's Settings → Pages</li>
+        <li>Under "Custom domain", enter your DevSpace subdomain (e.g., <code>yourname.devspace.qzz.io</code>)</li>
+        <li>Save the changes</li>
+        <li>Wait for the DNS check to complete (may take a few minutes)</li>
+      </ol>
+      <p>
+        Your CNAME record value will be <code>username.github.io</code> where <code>username</code> 
+        is your GitHub username.
+      </p>
+
+      <h3>Vercel</h3>
+      <p>
+        To configure a custom domain on Vercel:
+      </p>
+      <ol>
+        <li>Go to your project dashboard on Vercel</li>
+        <li>Navigate to Settings → Domains</li>
+        <li>Add your DevSpace subdomain</li>
+        <li>Select "CNAME" as the record type when prompted</li>
+      </ol>
+      <p>
+        Use <code>cname.vercel-dns.com</code> as your CNAME value, or the specific 
+        deployment URL if using a project subdomain.
+      </p>
+
+      <h3>Netlify</h3>
+      <p>
+        To configure a custom domain on Netlify:
+      </p>
+      <ol>
+        <li>Go to your site dashboard on Netlify</li>
+        <li>Navigate to Domain settings → Add custom domain</li>
+        <li>Enter your DevSpace subdomain</li>
+        <li>Verify the domain</li>
+      </ol>
+      <p>
+        Your CNAME value will be your site's Netlify subdomain (e.g., <code>yoursite.netlify.app</code>).
+      </p>
+
+      <h3>Cloudflare Pages</h3>
+      <p>
+        To configure a custom domain on Cloudflare Pages:
+      </p>
+      <ol>
+        <li>Go to your project on the Cloudflare dashboard</li>
+        <li>Navigate to Custom domains</li>
+        <li>Add your DevSpace subdomain</li>
+        <li>Follow the verification steps</li>
+      </ol>
+      <p>
+        Your CNAME value will be your Pages subdomain (e.g., <code>yourproject.pages.dev</code>).
+      </p>
+
+      <h3>Firebase Hosting</h3>
+      <p>
+        To configure a custom domain on Firebase:
+      </p>
+      <ol>
+        <li>Go to your Firebase project console</li>
+        <li>Navigate to Hosting → Add custom domain</li>
+        <li>Enter your DevSpace subdomain</li>
+        <li>Follow the verification steps</li>
+      </ol>
+      <p>
+        Your CNAME value will be your Firebase app subdomain (e.g., <code>yourapp.web.app</code>).
+      </p>
+
+      <h2>What is Not Allowed</h2>
+      <p>The following configurations are explicitly prohibited:</p>
+      <ul>
+        <li><strong>A Records</strong> — IP address pointing is not supported</li>
+        <li><strong>MX Records</strong> — Email services are not permitted</li>
+        <li><strong>TXT Records</strong> — Verification records are not supported</li>
+        <li><strong>NS Records</strong> — Delegation to other nameservers is not allowed</li>
+        <li><strong>Custom Servers</strong> — Self-hosted or VPS servers are not approved</li>
+        <li><strong>Reverse Proxies</strong> — CDN or proxy configurations are not permitted</li>
+        <li><strong>URL Shorteners</strong> — Redirect-only services are not allowed</li>
+      </ul>
+
+      <div class="info-box danger">
+        <div class="info-box-title">No Exceptions</div>
+        <p>
+          These restrictions are in place to maintain the integrity and security of the DevSpace registry. 
+          No exceptions will be made for individual requests.
+        </p>
+      </div>
+
+      <h2>SSL/TLS Certificates</h2>
+      <p>
+        All approved hosting providers automatically provision SSL/TLS certificates for custom domains. 
+        Once your subdomain is active and configured on your hosting platform, HTTPS will be available 
+        within a few minutes to a few hours.
+      </p>
+      <p>
+        If you experience SSL issues:
+      </p>
+      <ul>
+        <li>Ensure your custom domain is properly configured on your hosting platform</li>
+        <li>Wait at least 24 hours for certificate provisioning</li>
+        <li>Check your hosting provider's documentation for troubleshooting steps</li>
+      </ul>
+
+      <footer class="footer">
+        <span class="footer-text">Maintained by <a href="https://anveshraman.qzz.io" style="color: gray;">Anvesh Raman</a> &copy; 2026 DevSpace</span>
+        <div class="footer-right">
+          <a href="https://devspace.qzz.io" target="_blank">Main Site</a>
+          <a href="https://github.com/devspace-qzz-io/register" target="_blank">GitHub</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+    }
+  </script>
+</body>
+</html>

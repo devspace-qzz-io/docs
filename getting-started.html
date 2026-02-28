@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Getting Started - DevSpace Documentation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="DevSpace" class="logo-img">
+    </a>
+    <nav class="header-nav">
+      <a href="https://devspace.qzz.io" target="_blank">Main Site</a>
+      <a href="https://github.com/devspace-qzz-io/register" target="_blank">GitHub</a>
+    </nav>
+    <button class="mobile-menu-btn" onclick="toggleSidebar()">☰</button>
+  </header>
+
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <nav class="sidebar-nav">
+        <div class="sidebar-section">
+          <div class="sidebar-title">Overview</div>
+          <a href="index.html" class="sidebar-link">Documentation Home</a>
+          <a href="getting-started.html" class="sidebar-link active">Getting Started</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-title">Guides</div>
+          <a href="requesting-domain.html" class="sidebar-link">Requesting a Subdomain</a>
+          <a href="hosting-rules.html" class="sidebar-link">Hosting Requirements</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-title">Policies</div>
+          <a href="abuse-policy.html" class="sidebar-link">Abuse & Revocation</a>
+          <a href="faq.html" class="sidebar-link">FAQ</a>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+      <div class="page-header">
+        <h1>Getting Started</h1>
+        <p>Everything you need to know before requesting a DevSpace subdomain.</p>
+      </div>
+
+      <div class="content-section">
+        <h2>What is DevSpace?</h2>
+        <p>
+          DevSpace is a curated subdomain registry that provides free <code>username.devspace.qzz.io</code> 
+          subdomains to developers. Unlike automated registries, every request is manually reviewed to 
+          ensure quality and prevent abuse.
+        </p>
+        <p>
+          Our goal is to provide developers with clean, professional URLs for their portfolios, 
+          projects, and documentation sites.
+        </p>
+      </div>
+
+      <div class="content-section">
+        <h2>Who is DevSpace For?</h2>
+        <p>DevSpace is designed for:</p>
+        <ul>
+          <li><strong>Developers</strong> who want a professional URL for their portfolio</li>
+          <li><strong>Open source projects</strong> looking for a clean documentation URL</li>
+          <li><strong>Side projects</strong> that need a memorable domain</li>
+          <li><strong>Technical blogs</strong> and educational content</li>
+          <li><strong>Demo sites</strong> for showcasing work</li>
+        </ul>
+        <p>Your content must be developer-related. Personal blogs, business sites, and non-technical content are not eligible.</p>
+      </div>
+
+      <div class="content-section">
+        <h2>What is Allowed?</h2>
+        <p>The following are permitted on DevSpace subdomains:</p>
+        <ul>
+          <li>Developer portfolios and personal sites</li>
+          <li>Open source project documentation</li>
+          <li>Technical blogs and tutorials</li>
+          <li>Demo applications and experiments</li>
+          <li>Educational resources for developers</li>
+          <li>Tools and utilities for the developer community</li>
+        </ul>
+
+        <div class="info-box success">
+          <div class="info-box-title">Approved Hosting</div>
+          <p>
+            Your site must be hosted on an approved platform: GitHub Pages, Vercel, Netlify, 
+            Cloudflare Pages, or Firebase Hosting.
+          </p>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>What is Not Allowed?</h2>
+        <p>The following are strictly prohibited:</p>
+        <ul>
+          <li>Commercial business websites</li>
+          <li>Non-technical personal blogs</li>
+          <li>Ad-heavy or monetized content</li>
+          <li>Illegal or harmful content</li>
+          <li>Malware, phishing, or deceptive practices</li>
+          <li>Content that violates third-party rights</li>
+          <li>URL shorteners or redirect services</li>
+          <li>Sites primarily for SEO manipulation</li>
+        </ul>
+
+        <div class="info-box warning">
+          <div class="info-box-title">Technical Restrictions</div>
+          <p>
+            Only CNAME records are supported. A records, MX records, and custom server configurations 
+            are not permitted.
+          </p>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>Requirements Checklist</h2>
+        <p>Before submitting your request, ensure you have:</p>
+        <ul>
+          <li>A live site hosted on an <a href="hosting-rules.html">approved platform</a></li>
+          <li>Developer-related content</li>
+          <li>A public repository (for GitHub Pages) or accessible project</li>
+          <li>Your custom domain configured on your hosting platform</li>
+          <li>A GitHub account to submit the pull request</li>
+        </ul>
+      </div>
+
+      <div class="content-section">
+        <h2>Next Steps</h2>
+        <p>
+          Ready to request your subdomain? Head over to the 
+          <a href="requesting-domain.html">Requesting a Subdomain</a> guide for step-by-step instructions.
+        </p>
+      </div>
+
+      <footer class="footer">
+        <span class="footer-text">Maintained by <a href="https://anveshraman.qzz.io" style="color: gray;">Anvesh Raman</a> &copy; 2026 DevSpace</span>
+        <div class="footer-right">
+          <a href="https://devspace.qzz.io" target="_blank">Main Site</a>
+          <a href="https://github.com/devspace-qzz-io/register" target="_blank">GitHub</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+    }
+  </script>
+</body>
+</html>

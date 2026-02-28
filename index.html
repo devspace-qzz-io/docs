@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevSpace Documentation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="DevSpace" class="logo-img">
+    </a>
+    <nav class="header-nav">
+      <a href="https://devspace.qzz.io" target="_blank">Main Site</a>
+      <a href="https://github.com/devspace-qzz-io/register" target="_blank">GitHub</a>
+    </nav>
+    <button class="mobile-menu-btn" onclick="toggleSidebar()">☰</button>
+  </header>
+
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <nav class="sidebar-nav">
+        <div class="sidebar-section">
+          <div class="sidebar-title">Overview</div>
+          <a href="index.html" class="sidebar-link active">Documentation Home</a>
+          <a href="getting-started.html" class="sidebar-link">Getting Started</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-title">Guides</div>
+          <a href="requesting-domain.html" class="sidebar-link">Requesting a Subdomain</a>
+          <a href="hosting-rules.html" class="sidebar-link">Hosting Requirements</a>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-title">Policies</div>
+          <a href="abuse-policy.html" class="sidebar-link">Abuse & Revocation</a>
+          <a href="faq.html" class="sidebar-link">FAQ</a>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+      <div class="page-header">
+        <h1>DevSpace Documentation</h1>
+        <p>Technical documentation for the DevSpace curated developer namespace.</p>
+      </div>
+
+      <div class="content-section">
+        <p class="lead">
+          Welcome to the DevSpace documentation. Here you'll find everything you need to know about 
+          requesting, configuring, and managing your free developer subdomain.
+        </p>
+
+        <div class="info-box">
+          <div class="info-box-title">What is DevSpace?</div>
+          <p>
+            DevSpace is a manually reviewed subdomain registry providing free <code>username.devspace.qzz.io</code> 
+            subdomains for developers. All requests are reviewed to ensure quality and prevent abuse.
+          </p>
+        </div>
+      </div>
+
+      <h2>Quick Start</h2>
+      <p>
+        New to DevSpace? Follow these steps to get your subdomain up and running:
+      </p>
+
+      <ol class="steps">
+        <li class="step">
+          <div class="step-title">Review the requirements</div>
+          <p>Make sure your project meets our <a href="hosting-rules.html">hosting requirements</a> and content guidelines.</p>
+        </li>
+        <li class="step">
+          <div class="step-title">Prepare your site</div>
+          <p>Deploy your site to an approved hosting provider (GitHub Pages, Vercel, Netlify, etc.).</p>
+        </li>
+        <li class="step">
+          <div class="step-title">Submit your request</div>
+          <p>Fork our registry repository and submit a pull request with your subdomain configuration.</p>
+        </li>
+        <li class="step">
+          <div class="step-title">Wait for review</div>
+          <p>Our team will review your request manually. This typically takes 1-3 business days.</p>
+        </li>
+      </ol>
+
+      <h2>Documentation Sections</h2>
+      <div class="quick-links">
+        <a href="getting-started.html" class="quick-link-card">
+          <h3>Getting Started</h3>
+          <p>Learn what DevSpace is, who it's for, and what's allowed.</p>
+        </a>
+        <a href="requesting-domain.html" class="quick-link-card">
+          <h3>Requesting a Subdomain</h3>
+          <p>Step-by-step guide to submitting your subdomain request.</p>
+        </a>
+        <a href="hosting-rules.html" class="quick-link-card">
+          <h3>Hosting Requirements</h3>
+          <p>Approved hosting providers and CNAME configuration.</p>
+        </a>
+        <a href="abuse-policy.html" class="quick-link-card">
+          <h3>Abuse Policy</h3>
+          <p>Understanding our policies and revocation process.</p>
+        </a>
+        <a href="faq.html" class="quick-link-card">
+          <h3>FAQ</h3>
+          <p>Answers to common questions about DevSpace.</p>
+        </a>
+      </div>
+
+      <h2>Need Help?</h2>
+      <p>
+        If you can't find what you're looking for in the documentation, you can:
+      </p>
+      <ul>
+        <li>Check the <a href="faq.html">FAQ page</a> for common questions</li>
+        <li>Review existing requests in the <a href="https://github.com/devspace-qzz-io/register" target="_blank">GitHub repository</a></li>
+        <li>Contact us through the <a href="https://devspace.qzz.io" target="_blank">main website</a></li>
+      </ul>
+
+      <footer class="footer">
+        <span class="footer-text">Maintained by <a href="https://anveshraman.qzz.io" style="color: gray;">Anvesh Raman</a> &copy; 2026 DevSpace</span>
+        <div class="footer-right">
+          <a href="https://devspace.qzz.io" target="_blank">Main Site</a>
+          <a href="https://github.com/devspace-qzz-io/register" target="_blank">GitHub</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+    }
+  </script>
+</body>
+</html>
